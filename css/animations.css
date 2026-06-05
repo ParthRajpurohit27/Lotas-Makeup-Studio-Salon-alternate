@@ -1,0 +1,185 @@
+/* ===== ANIMATIONS & EFFECTS ===== */
+
+/* ---- Page Load Fade ---- */
+body { animation: pageLoad 0.5s ease forwards; }
+@keyframes pageLoad { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- Scroll Reveal variants ---- */
+.reveal          { opacity: 0; transform: translateY(50px);    transition: opacity 0.75s cubic-bezier(.23,1,.32,1), transform 0.75s cubic-bezier(.23,1,.32,1); }
+.reveal-left     { opacity: 0; transform: translateX(-60px);   transition: opacity 0.75s cubic-bezier(.23,1,.32,1), transform 0.75s cubic-bezier(.23,1,.32,1); }
+.reveal-right    { opacity: 0; transform: translateX(60px);    transition: opacity 0.75s cubic-bezier(.23,1,.32,1), transform 0.75s cubic-bezier(.23,1,.32,1); }
+.reveal-scale    { opacity: 0; transform: scale(0.85);         transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-rotate   { opacity: 0; transform: rotate(-6deg) translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+
+.reveal.visible, .reveal-left.visible, .reveal-right.visible,
+.reveal-scale.visible, .reveal-rotate.visible { opacity: 1; transform: none; }
+
+/* Stagger delays */
+.stagger > *                { opacity: 0; transform: translateY(35px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s; }
+.stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.1s; }
+.stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.2s; }
+.stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.3s; }
+.stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.4s; }
+.stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.5s; }
+.stagger.visible > *:nth-child(7) { opacity:1; transform:none; transition-delay:0.6s; }
+.stagger.visible > *:nth-child(8) { opacity:1; transform:none; transition-delay:0.7s; }
+
+/* ---- Floating animation ---- */
+@keyframes floatUp     { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-14px)} }
+@keyframes floatSide   { 0%,100%{transform:translateX(0)} 50%{transform:translateX(10px)} }
+@keyframes floatDiag   { 0%,100%{transform:translate(0,0)} 50%{transform:translate(8px,-10px)} }
+@keyframes pulseGlow   { 0%,100%{box-shadow:0 0 20px rgba(201,169,110,0.2)} 50%{box-shadow:0 0 45px rgba(201,169,110,0.55)} }
+@keyframes rotateSlow  { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes shimmerMove { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+@keyframes borderGlow  { 0%,100%{border-color:rgba(201,169,110,0.2)} 50%{border-color:rgba(201,169,110,0.6)} }
+@keyframes textGlow    { 0%,100%{text-shadow:0 0 8px rgba(201,169,110,0)} 50%{text-shadow:0 0 25px rgba(201,169,110,0.6)} }
+@keyframes scanLine    { 0%{top:-10%} 100%{top:110%} }
+@keyframes fadeInDown  { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:none} }
+@keyframes fadeInUp    { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+@keyframes zoomIn      { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
+@keyframes slideInLeft { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:none} }
+
+/* Apply floating to hero badge */
+.hero-floating-tag { animation: floatUp 4s ease-in-out infinite; }
+.hero-badge        { animation: pulseGlow 3s ease-in-out infinite; }
+
+/* ---- Shimmer text effect ---- */
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-shimmer) 40%, var(--gold) 60%, var(--gold-dark) 100%);
+  background-size: 400px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerMove 3s linear infinite;
+}
+
+/* ---- Gold glow on hover for cards ---- */
+.service-card:hover, .why-card:hover, .offer-card:hover, .facility-card:hover {
+  box-shadow: 0 0 0 1px rgba(201,169,110,0.3), 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,169,110,0.12);
+}
+
+/* ---- Section entrance lines ---- */
+.section-line-enter {
+  position: relative;
+  overflow: hidden;
+}
+.section-line-enter::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transition: width 1.2s ease;
+}
+.section-line-enter.visible::before { width: 100%; }
+
+/* ---- Marquee pause on hover ---- */
+.marquee-track { will-change: transform; }
+
+/* ---- Navbar entrance ---- */
+.navbar { animation: fadeInDown 0.6s ease 0.2s both; }
+
+/* ---- Hero content entrance ---- */
+.hero-eyebrow  { animation: fadeInUp 0.7s ease 0.3s both; }
+.hero-title    { animation: fadeInUp 0.8s ease 0.4s both; }
+.hero-subtitle { animation: fadeInUp 0.8s ease 0.5s both; }
+.hero-actions  { animation: fadeInUp 0.8s ease 0.6s both; }
+.hero-stats    { animation: fadeInUp 0.8s ease 0.7s both; }
+
+/* ---- Cursor glow trail (desktop only) ---- */
+.cursor-glow {
+  position: fixed;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s ease, top 0.15s ease;
+}
+
+/* ---- Gold sparkle dots floating ---- */
+.sparkle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleAnim 2s ease forwards;
+}
+@keyframes sparkleAnim {
+  0%   { opacity: 1; transform: scale(1) translate(0,0); }
+  100% { opacity: 0; transform: scale(0) translate(var(--tx), var(--ty)); }
+}
+
+/* ---- Page transition overlay ---- */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--black);
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.page-transition.active { opacity: 1; }
+
+/* ---- Glowing dividers ---- */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  box-shadow: 0 0 10px rgba(201,169,110,0.4);
+  margin: 0;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ---- Section title glow on scroll enter ---- */
+.section-title.visible { animation: textGlow 4s ease-in-out infinite; }
+
+/* ---- Image hover zoom ---- */
+.img-hover-zoom { overflow: hidden; }
+.img-hover-zoom img { transition: transform 0.6s cubic-bezier(.25,.46,.45,.94); }
+.img-hover-zoom:hover img { transform: scale(1.08); }
+
+/* ---- Button ripple ---- */
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+.btn:active::after { width: 200px; height: 200px; opacity: 1; transition: 0s; }
+
+/* ---- Card tilt effect ---- */
+.tilt-card { transform-style: preserve-3d; transition: transform 0.3s ease; }
+
+/* ---- Number counter animation ---- */
+.count-up { transition: all 0.1s ease; }
+
+/* ---- Breathing border ---- */
+.breathe-border { animation: borderGlow 3s ease-in-out infinite; }
+
+/* ---- Gold scan line on hero ---- */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+  animation: scanLine 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---- Mobile performance ---- */
+@media (max-width: 768px) {
+  .cursor-glow { display: none; }
+  .hero::after { display: none; }
+  .reveal, .reveal-left, .reveal-right { transform: translateY(30px); }
+}

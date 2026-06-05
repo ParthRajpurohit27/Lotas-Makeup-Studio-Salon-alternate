@@ -1,0 +1,70 @@
+/* ===== SERVICES PAGE CSS ===== */
+
+.services-page { padding: 80px 40px; }
+
+/* Category Tabs */
+.cat-tabs {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center;
+}
+.cat-tab {
+  font-family: var(--font-ui); font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--grey); border: 1px solid rgba(201,169,110,0.2);
+  background: var(--dark2); padding: 10px 20px; border-radius: 30px;
+  cursor: pointer; transition: var(--transition);
+}
+.cat-tab:hover { color: var(--gold); border-color: rgba(201,169,110,0.5); }
+.cat-tab.active { background: var(--gold); color: var(--black); border-color: var(--gold); }
+
+/* Service Category Block */
+.service-category-block { margin-bottom: 70px; scroll-margin-top: 100px; }
+.service-category-block.hidden { display: none; }
+
+.svc-cat-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 30px;
+  padding-bottom: 18px; border-bottom: 1px solid rgba(201,169,110,0.2);
+}
+.svc-cat-icon { font-size: 2rem; }
+.svc-cat-title {
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 700;
+  color: var(--cream); letter-spacing: 1px;
+}
+.svc-cat-title span { color: var(--gold); font-style: italic; }
+
+.svc-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.svc-item {
+  background: var(--dark2); border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 10px; padding: 22px 20px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 12px; transition: var(--transition);
+}
+.svc-item:hover {
+  border-color: rgba(201,169,110,0.4); transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 15px rgba(201,169,110,0.07);
+}
+.svc-item-info { flex: 1; }
+.svc-item-name {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 700;
+  color: var(--cream); margin-bottom: 6px;
+}
+.svc-item-desc {
+  font-family: var(--font-ui); font-size: 0.8rem; color: var(--grey);
+  line-height: 1.65;
+}
+.svc-item-price {
+  font-family: var(--font-display); font-size: 0.88rem; font-weight: 700;
+  color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  background: rgba(201,169,110,0.08); border: 1px solid rgba(201,169,110,0.2);
+  padding: 4px 12px; border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .services-page { padding: 60px 20px; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .cat-tabs { gap: 8px; }
+  .cat-tab { font-size: 0.7rem; padding: 8px 14px; }
+}
