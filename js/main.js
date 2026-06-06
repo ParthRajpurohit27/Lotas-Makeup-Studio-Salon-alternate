@@ -19,7 +19,7 @@
     const bar = document.createElement('div');
     bar.className = 'theme-toggle-bar';
     bar.innerHTML = '<span class="ttb-label">Theme</span>' +
-      THEMES.map(t => `<button class="theme-btn" data-theme="${t}" data-label="${LABELS[t]}" title="${LABELS[t]} Parth"></button>`).join('');
+      THEMES.map(t => `<button class="theme-btn" data-theme="${t}" data-label="${LABELS[t]}" title="${LABELS[t]} Theme"></button>`).join('');
     document.body.prepend(bar);
     bar.querySelectorAll('.theme-btn').forEach(btn => {
       btn.addEventListener('click', () => { applyTheme(btn.dataset.theme); createSparkles(btn); });
