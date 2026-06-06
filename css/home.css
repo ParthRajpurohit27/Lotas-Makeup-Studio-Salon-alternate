@@ -1225,3 +1225,57 @@
   .hero-stats { gap: 20px; }
   .offers-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== SERVICE CARD IMAGE FIX ===== */
+.service-icon-img {
+  width: 80px; height: 80px; border-radius: 50%;
+  overflow: hidden; margin: 0 auto 20px;
+  border: 2px solid rgba(201,169,110,0.25);
+  transition: var(--transition);
+}
+.service-icon-img img { width:100%; height:100%; object-fit:cover; }
+.service-card:hover .service-icon-img { border-color: var(--gold); box-shadow: 0 0 20px rgba(201,169,110,0.3); }
+
+/* ===== HERO FLOATING TAG — repositioned to bottom-right of image ===== */
+.hero-floating-tag {
+  position: absolute;
+  bottom: 24px; right: -16px;
+  top: auto;
+  background: rgba(10,10,10,0.92);
+  border: 1px solid rgba(201,169,110,0.45);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 10px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: floatUp 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+/* Hero badge — bottom-left, smaller, not blocking */
+.hero-badge {
+  position: absolute;
+  bottom: -20px; left: -20px;
+  width: 100px; height: 100px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-radius: 50%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  box-shadow: 0 8px 28px rgba(201,169,110,0.4);
+  text-align: center; padding: 10px; z-index: 3;
+}
+.hero-badge .badge-num { font-size:1.5rem; }
+
+/* Location map iframe override */
+.location-map-wrap iframe { width:100%; height:100%; border:none; }
+
+/* About image grid — ensure images show */
+.about-img-grid .img-wrap img { width:100%; height:100%; object-fit:cover; }
+.about-img-grid .img-wrap { background:var(--dark3); }
+
+/* Owner visual image fix */
+.owner-img-frame { background: var(--dark3); }
+.owner-img-frame img { width:100%; height:100%; object-fit:cover; object-position: top center; }
+
+/* Gallery grid image fix */
+.gallery-grid .g-item img { width:100%; height:100%; object-fit:cover; }
