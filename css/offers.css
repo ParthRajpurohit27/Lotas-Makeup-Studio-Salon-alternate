@@ -39,3 +39,39 @@
 @media (max-width:480px) {
   .how-it-works .hiw-steps { grid-template-columns:1fr !important; }
 }
+
+/* Ask Price button on offers page */
+.offer-card-full .offer-cta.ask-price-btn,
+.offer-card-full .ask-price-btn {
+  display: block;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin: 20px 28px 28px;
+}
+.offer-card-full .ask-price-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,169,110,0.4);
+}
+.offer-card-full.featured .ask-price-btn {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--black);
+  border-color: transparent;
+}
+.offer-card-full.featured .ask-price-btn:hover {
+  box-shadow: 0 8px 28px rgba(201,169,110,0.55);
+}
+/* Remove price section entirely if empty */
+.offer-card-full .ocf-top .offer-price { display: none; }

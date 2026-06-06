@@ -1279,3 +1279,58 @@
 
 /* Gallery grid image fix */
 .gallery-grid .g-item img { width:100%; height:100%; object-fit:cover; }
+
+/* ===== OFFER CARD — compact, no image space ===== */
+.offer-card {
+  display: flex;
+  flex-direction: column;
+}
+.offer-card .offer-includes {
+  flex: 1;
+}
+/* Tighter offers grid — 3 cols max, smaller cards */
+.offers-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.offer-card {
+  padding: 22px 20px;
+}
+.offer-name { font-size: 1.1rem; margin-bottom: 4px; }
+.offer-tagline { font-size: 0.78rem; margin-bottom: 14px; }
+.offer-includes li {
+  font-size: 0.8rem;
+  padding: 4px 0;
+}
+.offer-cta {
+  padding: 11px;
+  margin-top: auto;
+}
+
+/* === ASK PRICE BUTTON in home offer cards === */
+.offer-card .offer-cta.ask-price-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.72rem;
+  padding: 11px 14px;
+  border-radius: 6px;
+  display: block;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 14px;
+}
+.offer-card .offer-cta.ask-price-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201,169,110,0.35);
+}

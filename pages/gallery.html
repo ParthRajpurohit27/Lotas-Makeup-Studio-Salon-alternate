@@ -48,102 +48,30 @@
     <span class="section-tag">Our Work</span>
     <h2 class="section-title">Every Look is a <span>Masterpiece</span></h2>
     <div class="section-divider"><div class="diamond"></div></div>
-    <p class="section-subtitle">Browse through our portfolio of transformations.</p>
+    <p class="section-subtitle">Every transformation is a story of beauty, skill and confidence — captured through our lens.</p>
   </div>
 
-  <!-- Filter Tabs -->
-  <div class="gallery-filters reveal" style="padding:0 24px;max-width:1200px;margin:0 auto 40px;">
-    <button class="gal-filter active" data-filter="all">All Work</button>
-    <button class="gal-filter" data-filter="bridal">💄 Bridal</button>
-    <button class="gal-filter" data-filter="hair">💇‍♀️ Hair</button>
-    <button class="gal-filter" data-filter="skin">✨ Skin</button>
-    <button class="gal-filter" data-filter="makeup">🌟 Party Makeup</button>
-    <button class="gal-filter" data-filter="nails">💅 Nails</button>
+  <!-- Filter Tabs — auto-built from GALLERY_CATEGORIES in gallery-data.js -->
+  <div class="gallery-filters reveal" id="galleryFilters" style="padding:0 24px;max-width:1200px;margin:0 auto 40px;"></div>
+
+  <!-- Gallery Grid — rendered by JS -->
+  <div class="gallery-page-grid" id="galleryGrid" style="max-width:1200px;margin:0 auto;padding:0 24px;"></div>
+
+  <!-- See More Button -->
+  <div style="text-align:center;margin-top:40px;padding:0 24px;" id="seeMoreWrap">
+    <button class="btn btn-outline" id="seeMoreBtn" onclick="loadMoreGallery()">
+      Load More Photos
+    </button>
+    <p id="galleryCountNote" style="font-family:var(--font-ui);font-size:0.78rem;color:var(--grey);margin-top:12px;"></p>
   </div>
 
-  <!-- Gallery Grid — Replace image src with your own photos -->
-  <div class="gallery-page-grid" id="galleryGrid" style="max-width:1200px;margin:0 auto;padding:0 24px;">
-
-    <div class="gp-item gp-tall" data-cat="bridal">
-      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&q=80" alt="Bridal Makeup"/>
-      <div class="gp-overlay"><span>Bridal Makeup</span></div>
-    </div>
-    <div class="gp-item" data-cat="hair">
-      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="Hair Styling"/>
-      <div class="gp-overlay"><span>Hair Styling</span></div>
-    </div>
-    <div class="gp-item" data-cat="skin">
-      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80" alt="Facial Glow"/>
-      <div class="gp-overlay"><span>Skin Glow Facial</span></div>
-    </div>
-    <div class="gp-item" data-cat="makeup">
-      <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=400&q=80" alt="Party Makeup"/>
-      <div class="gp-overlay"><span>Party Makeup</span></div>
-    </div>
-    <div class="gp-item gp-wide" data-cat="bridal">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt="Bridal Look"/>
-      <div class="gp-overlay"><span>Bridal Look</span></div>
-    </div>
-    <div class="gp-item" data-cat="nails">
-      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt="Nail Art"/>
-      <div class="gp-overlay"><span>Nail Art</span></div>
-    </div>
-    <div class="gp-item" data-cat="hair">
-      <img src="https://images.unsplash.com/photo-1598452963314-b09f397a5c48?w=400&q=80" alt="Hair Color"/>
-      <div class="gp-overlay"><span>Hair Coloring</span></div>
-    </div>
-    <div class="gp-item" data-cat="skin">
-      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=80" alt="Skin Treatment"/>
-      <div class="gp-overlay"><span>Skin Treatment</span></div>
-    </div>
-    <div class="gp-item gp-tall" data-cat="bridal">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Engagement Makeup"/>
-      <div class="gp-overlay"><span>Engagement Look</span></div>
-    </div>
-    <div class="gp-item" data-cat="makeup">
-      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80" alt="Glam Look"/>
-      <div class="gp-overlay"><span>Glam Look</span></div>
-    </div>
-    <div class="gp-item" data-cat="hair">
-      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Salon"/>
-      <div class="gp-overlay"><span>Blow Dry Styling</span></div>
-    </div>
-    <div class="gp-item" data-cat="nails">
-      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80" alt="Gel Nails"/>
-      <div class="gp-overlay"><span>Gel Extensions</span></div>
-    </div>
-    <div class="gp-item gp-wide" data-cat="bridal">
-      <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=700&q=80" alt="Mehndi Look"/>
-      <div class="gp-overlay"><span>Mehndi / Haldi Look</span></div>
-    </div>
-    <div class="gp-item" data-cat="skin">
-      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&q=80" alt="Body Treatment"/>
-      <div class="gp-overlay"><span>Body Treatment</span></div>
-    </div>
-    <div class="gp-item" data-cat="hair">
-      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=400&q=80" alt="Keratin"/>
-      <div class="gp-overlay"><span>Keratin Treatment</span></div>
-    </div>
-    <div class="gp-item" data-cat="makeup">
-      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&q=80" alt="HD Makeup"/>
-      <div class="gp-overlay"><span>HD Makeup</span></div>
-    </div>
-  </div>
-
-  <!-- Add Photo Instructions
-  <div class="gallery-add-note reveal" style="max-width:700px;margin:50px auto 0;padding:0 24px;text-align:center;">
-    <div class="add-note-box">
-      <span class="add-note-icon">📸</span>
-      <h4>Add Your Own Photos</h4>
-      <p>To add real photos: Upload your images to the <code>/images/</code> folder, then replace the <code>src="https://..."</code> in each <code>&lt;img&gt;</code> tag inside <code>gallery.html</code> with <code>src="../images/your-photo.jpg"</code></p>
-    </div>
-  </div> -->
+  <!-- How to add photos guide -->
 </section>
 
 <!-- CTA -->
 <section class="cta-banner section" style="padding:80px 40px;">
   <div class="cta-banner-inner reveal" style="max-width:700px;margin:0 auto;text-align:center;">
-    <span class="section-tag">Your Turn to Shine</span>
+    <span class="section-tag">Your Turn</span>
     <h2 class="cta-banner-title" style="font-size:clamp(1.8rem,3vw,2.8rem);">Ready for Your Own <span>Transformation?</span></h2>
     <div class="section-divider"><div class="diamond"></div></div>
     <p class="cta-banner-subtitle">Every look in our gallery started with a booking. Yours could be next!</p>
@@ -158,35 +86,108 @@
   <div class="footer-grid">
     <div class="footer-brand"><div class="footer-logo"><img src="../images/logo.jpg" alt="Lotas"/><div class="footer-logo-text">Lotas Makeup Studio<br/>&amp; Salon</div></div><p>Bhopal's premier ladies-only beauty destination for over 10 years.</p></div>
     <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="offers.html">Packages</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
-    <div class="footer-col"><h4>Our Services</h4><ul><li><a href="services.html#skin">Skin &amp; Facials</a></li><li><a href="services.html#hair">Hair Treatments</a></li><li><a href="services.html#makeup">Bridal Makeup</a></li><li><a href="services.html#waxing">Waxing</a></li><li><a href="services.html#nails">Nail Services</a></li><li><a href="services.html#body">Body Treatments</a></li></ul></div>
+    <div class="footer-col"><h4>Our Services</h4><ul><li><a href="services.html#skin">Skin &amp; Facials</a></li><li><a href="services.html#hair">Hair Treatments</a></li><li><a href="services.html#makeup">Bridal Makeup</a></li><li><a href="services.html#waxing">Waxing</a></li><li><a href="services.html#body">Body Treatments</a></li></ul></div>
     <div class="footer-col"><h4>Contact Us</h4>
       <div class="footer-contact-item"><span class="icon">📍</span><p><strong style="color:var(--gold)">Lotas Makeup Studio &amp; Salon</strong><br/>First Floor, Sarvdharm B Sector, Kolar Road, Near Vishal Mega Mart, Bhopal — 462042</p></div>
-      <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:+91XXXXXXXXXX" style="color:var(--grey)">+91 XXXXX XXXXX</a></p></div>
+      <div class="footer-contact-item"><span class="icon">📞</span><p><a href="tel:+919981286212" style="color:var(--grey)">+91 99812 86212</a></p></div>
     </div>
   </div>
   <div class="footer-bottom"><p>&copy; 2024 <span>Lotas Makeup Studio &amp; Salon</span>. All rights reserved.</p><p>Made with <span>♥</span> for the women of Bhopal</p></div>
 </footer>
 
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Lotas%20Makeup%20Studio!%20I%20saw%20your%20gallery%20and%20love%20your%20work.%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/919981286212?text=Hi%20Lotas%20Makeup%20Studio!%20I%20saw%20your%20gallery%20and%20love%20your%20work.%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script src="../js/gallery-data.js"></script>
 <script src="../js/reviews-data.js"></script>
 <script src="../js/offers-data.js"></script>
 <script src="../js/main.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const filters = document.querySelectorAll('.gal-filter');
-  const items   = document.querySelectorAll('.gp-item');
-  filters.forEach(f => f.addEventListener('click', () => {
-    filters.forEach(x => x.classList.remove('active'));
-    f.classList.add('active');
-    const cat = f.dataset.filter;
-    items.forEach(item => {
-      const show = cat === 'all' || item.dataset.cat === cat;
-      item.style.display = show ? '' : 'none';
+/* ===== GALLERY PAGE LOGIC ===== */
+let currentFilter = 'all';
+let shownCount = 0;
+const BATCH = 16;
+
+function getAllImages() {
+  if (currentFilter === 'all') {
+    const all = [];
+    Object.keys(GALLERY_IMAGES).forEach(cat => {
+      GALLERY_IMAGES[cat].forEach(img => all.push({ ...img, cat }));
     });
-  }));
+    return all;
+  }
+  return (GALLERY_IMAGES[currentFilter] || []).map(img => ({ ...img, cat: currentFilter }));
+}
+
+function getCatLabel(catId) {
+  const found = GALLERY_CATEGORIES.find(c => c.id === catId);
+  return found ? found.label : catId;
+}
+function getCatIcon(catId) {
+  const found = GALLERY_CATEGORIES.find(c => c.id === catId);
+  return found ? found.icon : '✨';
+}
+
+function buildFilters() {
+  const wrap = document.getElementById('galleryFilters');
+  if (!wrap) return;
+  wrap.innerHTML = GALLERY_CATEGORIES.map(c => `
+    <button class="gal-filter ${c.id==='all'?'active':''}" data-filter="${c.id}">
+      ${c.icon} ${c.label}
+    </button>
+  `).join('');
+  wrap.querySelectorAll('.gal-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      shownCount = 0;
+      document.getElementById('galleryGrid').innerHTML = '';
+      loadMoreGallery();
+    });
+  });
+}
+
+function loadMoreGallery() {
+  const grid = document.getElementById('galleryGrid');
+  const btn  = document.getElementById('seeMoreBtn');
+  const note = document.getElementById('galleryCountNote');
+  const allImgs = getAllImages();
+  const batch = allImgs.slice(shownCount, shownCount + BATCH);
+
+  batch.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className = 'gp-item reveal';
+    item.dataset.cat = img.cat;
+    // Use tall/wide for visual variety
+    if (i === 0 && shownCount === 0) item.classList.add('gp-tall');
+    if (i === 4 && shownCount === 0) item.classList.add('gp-wide');
+    item.innerHTML = `
+      <img src="${img.src}" alt="${img.alt}" loading="lazy"/>
+      <div class="gp-overlay">
+        <span>${getCatIcon(img.cat)} ${img.alt}</span>
+        <small class="gp-cat-tag">${getCatLabel(img.cat)}</small>
+      </div>`;
+    grid.appendChild(item);
+    // Trigger reveal
+    setTimeout(() => item.classList.add('visible'), i * 60);
+  });
+
+  shownCount += batch.length;
+  note.textContent = `Showing ${shownCount} of ${allImgs.length} photos`;
+
+  if (shownCount >= allImgs.length) {
+    btn.style.display = 'none';
+    note.textContent = `All ${allImgs.length} photos loaded`;
+  } else {
+    btn.style.display = 'inline-flex';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildFilters();
+  loadMoreGallery();
 });
 </script>
 </body>

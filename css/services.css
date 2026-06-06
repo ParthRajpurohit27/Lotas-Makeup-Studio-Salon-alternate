@@ -68,3 +68,21 @@
   .cat-tabs { gap: 8px; }
   .cat-tab { font-size: 0.7rem; padding: 8px 14px; }
 }
+
+/* Ask price link in service item */
+.svc-ask-price {
+  font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  border: 1px solid rgba(201,169,110,0.3);
+  padding: 5px 12px; border-radius: 20px;
+  white-space: nowrap; display: inline-block;
+  transition: all 0.25s ease; background: rgba(201,169,110,0.05);
+}
+.svc-ask-price:hover {
+  background: var(--gold); color: var(--black);
+  border-color: var(--gold); transform: scale(1.05);
+}
+
+/* Fix hidden class */
+.service-category-block.hidden { display: none !important; }

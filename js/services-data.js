@@ -62,18 +62,6 @@ const SERVICES_DATA = [
     ]
   },
   {
-    category: "Nail & Hand Care",
-    icon: "💅",
-    services: [
-      { name: "Manicure", desc: "Complete hand treatment including shaping, cuticle care, scrub and polish.", price: "Starting ₹199" },
-      { name: "Pedicure", desc: "Relaxing foot treatment with scrub, massage, shaping and polish application.", price: "Starting ₹249" },
-      { name: "Gel Nail Extensions", desc: "Beautiful, durable gel extensions for stylish, long-lasting nail looks.", price: "Starting ₹799" },
-      { name: "Nail Art", desc: "Creative and trendy nail designs customized to your preference.", price: "Starting ₹299" },
-      { name: "Nail Polish Application", desc: "Quick, professional nail polish application for an instant beauty boost.", price: "Starting ₹99" },
-      { name: "Paraffin Treatment", desc: "Luxury paraffin wax treatment for ultra-soft, moisturized hands and feet.", price: "Starting ₹349" }
-    ]
-  },
-  {
     category: "Body Treatments",
     icon: "🌿",
     services: [

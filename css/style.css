@@ -711,3 +711,52 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-logo img { width: 44px; height: 44px; }
   .nav-logo-text .name { font-size: 0.8rem; }
 }
+
+/* ===== TOPBAR + NAVBAR OFFSET ===== */
+/* Topbar is 42px, navbar sits below it */
+/* Compensate page hero padding for topbar */
+.page-hero { padding-top: 160px !important; }
+.hero { padding-top: 160px; }
+
+/* Mobile nav covers full screen below topbar */
+.mobile-nav {
+  top: 0 !important;
+  padding-top: 80px;
+}
+
+/* ===== TOPBAR LIGHT THEME OVERRIDE ===== */
+[data-theme="pearl"] .theme-toggle-bar,
+[data-theme="blush"] .theme-toggle-bar,
+[data-theme="lavender"] .theme-toggle-bar {
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+[data-theme="pearl"] .ttb-credit,
+[data-theme="blush"] .ttb-credit,
+[data-theme="lavender"] .ttb-credit {
+  color: rgba(0,0,0,0.4);
+  border-color: rgba(0,0,0,0.2);
+}
+[data-theme="pearl"] .ttb-credit:hover,
+[data-theme="blush"] .ttb-credit:hover,
+[data-theme="lavender"] .ttb-credit:hover { color: var(--gold); }
+
+/* ===== MOBILE NAV LIGHT THEME ===== */
+[data-theme="pearl"] .mobile-nav,
+[data-theme="blush"] .mobile-nav,
+[data-theme="lavender"] .mobile-nav {
+  background: rgba(248,245,240,0.99) !important;
+}
+[data-theme="pearl"] .mobile-nav a,
+[data-theme="blush"] .mobile-nav a,
+[data-theme="lavender"] .mobile-nav a { color: var(--cream); }
+[data-theme="pearl"] .mobile-nav a:hover,
+[data-theme="blush"] .mobile-nav a:hover,
+[data-theme="lavender"] .mobile-nav a:hover { color: var(--gold); }
+
+/* ===== HAMBURGER — visible on light themes ===== */
+[data-theme="pearl"] .hamburger span,
+[data-theme="blush"] .hamburger span,
+[data-theme="lavender"] .hamburger span { background: var(--cream); }
+
+/* ===== WHATSAPP FLOAT — always visible ===== */
+.whatsapp-float { bottom: 24px !important; right: 24px !important; z-index: 900; }
